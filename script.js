@@ -1,3 +1,4 @@
+//Written by Michael Stroughair, Summer 2015, for the purpose of powering the ESB's Future Network Model Web Interface
 var innerDoc;
 var state = 1;
 var time = 2;
