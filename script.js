@@ -3,23 +3,18 @@ var innerDoc;
 var state = 1;
 var time = 2;
 var signs;
-innerDoc = document.getElementById("state_current");
-innerDoc = innerDoc.contentWindow.document||innerDoc.contentDocument;
-send_python(state);
-function firstCharOfContent(elt) { return elt.textContent[0]; };	//used in update_sheet. Returns the first character in a string
+
 //update_sheet: Moves the state 
 function update_sheet(){
-
-	innerDoc.innerHTML = state.toString();
-	if (state === 1){
+	if (state === 0){
 		document.getElementById("information").src = 'state_1.html';
 		document.getElementById("values_numbers").innerHTML = document.getElementById("state_1").innerHTML;
 	}
-	else if (state === 2){
+	else if (state === 1){
 		document.getElementById("information").src = 'state_2.html';
 		document.getElementById("values_numbers").innerHTML = document.getElementById("state_2").innerHTML;
 	}
-	else if (state === 3){
+	else if (state === 2){
 		document.getElementById("information").src = 'state_3.html';
 		document.getElementById("values_numbers").innerHTML = document.getElementById("state_3").innerHTML;
 	}
@@ -127,9 +122,28 @@ function update_sheet(){
 update_sheet();
 //Updates the Clock image, and calls the update function every time it hits the first segment.
 var update_clock = setInterval(function(){
+	document.getElementById("state_current").contentWindow.location.reload(true);
+	//innerDoc = document.getElementById("state_current").contentWindow.document.innerHTML;
+	//var html = innerDoc.outerHTML;
+	var xmlhttp;
+	if (window.XMLHttpRequest){
+		// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp=new XMLHttpRequest();
+		}
+	else{
+		// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  	}
+	xmlhttp.onreadystatechange=function(){
+ 		if (xmlhttp.readyState== 4 && xmlhttp.status== 200){
+    			var http = xmlhttp.responseText;
+    			console.log(http);
+    		}
+	}
+	xmlhttp.open("GET","state.txt",true);
+	xmlhttp.send();
 	document.getElementById("timer").style.backgroundImage = "url(timer-" + time.toString() + ".png)";
 	if (time === 1){
-		send_python(state);
 		update_sheet();
 	} 
 	time++;
@@ -137,11 +151,6 @@ var update_clock = setInterval(function(){
 		time = 1; 
 	}
 },1000)
-function send_python(state){
-	var xmlhttp = new XMLHttpRequest();
-	xml.open("GET","python_bridge.php?state="state,true);
-	xml.send();
-}
 //Takes a number in numerical form, and converts it into a text equivalent
 function convert(number){
 
