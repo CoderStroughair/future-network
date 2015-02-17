@@ -3,9 +3,14 @@ var innerDoc;
 var state = 1;
 var time = 2;
 var signs;
+innerDoc = document.getElementById("state_current");
+innerDoc = innerDoc.contentWindow.document||innerDoc.contentDocument;
+send_python(state);
 function firstCharOfContent(elt) { return elt.textContent[0]; };	//used in update_sheet. Returns the first character in a string
 //update_sheet: Moves the state 
 function update_sheet(){
+
+	innerDoc.innerHTML = state.toString();
 	if (state === 1){
 		document.getElementById("information").src = 'state_1.html';
 		document.getElementById("values_numbers").innerHTML = document.getElementById("state_1").innerHTML;
@@ -124,6 +129,7 @@ update_sheet();
 var update_clock = setInterval(function(){
 	document.getElementById("timer").style.backgroundImage = "url(timer-" + time.toString() + ".png)";
 	if (time === 1){
+		send_python(state);
 		update_sheet();
 	} 
 	time++;
@@ -131,7 +137,11 @@ var update_clock = setInterval(function(){
 		time = 1; 
 	}
 },1000)
-
+function send_python(state){
+	var xmlhttp = new XMLHttpRequest();
+	xml.open("GET","python_bridge.php?state="state,true);
+	xml.send();
+}
 //Takes a number in numerical form, and converts it into a text equivalent
 function convert(number){
 
