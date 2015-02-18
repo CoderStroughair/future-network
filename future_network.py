@@ -41,17 +41,13 @@ def powermode(mode):
                 p.leds[lightsPrimary].turn_off()
 		p.leds[chargers].turn_off()
 
-#### Initialise the Lights to Full Power Mode ####
-os.chdir("/var/www")
-powermode(0)
-signal.signal(signal.SIGALRM,mode_change)
+os.chdir("/var/www") 				#### Change directory to save files in proper folder ####
+powermode(0)					#### Initialise the Lights to Full Power Mode ####
+signal.signal(signal.SIGALRM,mode_change)	#### Initialise call to change mode for every <delay> seconds ####
 signal.alarm(delay)
 while True:
-	obj= [{"mode": mode}]
-	data = json.dumps(obj)
-	data2 = json.dumps(mode)
-     	with open("state.html","w") as f:
-               	f.write(data)
+	data2 = json.dumps(mode)		#### May need to be changed into HTML type code ####
 	with open("state2.html","w") as f:
+		f.write('<link href="style.css" rel="stylesheet" type="text/css" />')
 		f.write(data2)
 	sleep(1)
