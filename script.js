@@ -5,20 +5,21 @@ var time = 2;
 var signs;
 
 //update_sheet: Moves the state 
-function changeState(input){
-	state = input;
+function changeState(){
+	state = "3";
+	document.getElementById("state_current").innerHTML = state;
 	update_sheet();
 }
 function update_sheet(){
-	if (state === "0"){
+	if (state === "1"){
 		//document.getElementById("information").src = 'state_1.html';
 		document.getElementById("values_numbers").innerHTML = document.getElementById("state_1").innerHTML;
 	}
-	else if (state === "1"){
+	else if (state === "2"){
 		//document.getElementById("information").src = 'state_2.html';
 		document.getElementById("values_numbers").innerHTML = document.getElementById("state_2").innerHTML;
 	}
-	else if (state === "2"){
+	else if (state === "3"){
 		//document.getElementById("information").src = 'state_3.html';
 		document.getElementById("values_numbers").innerHTML = document.getElementById("state_3").innerHTML;
 	}
@@ -247,4 +248,35 @@ function convertdouble(number){
 			return "five";
 			break;
 	}	
+}
+function getRequest(url, success, error) {
+    var req = false;
+    try{
+        // most browsers
+        req = new XMLHttpRequest();
+    } catch (e){
+        // IE
+        try{
+            req = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch(e) {
+            // try an older version
+            try{
+                req = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch(e) {
+                return false;
+            }
+        }
+    }
+    if (!req) return false;
+    if (typeof success != 'function') success = function () {};
+    if (typeof error!= 'function') error = function () {};
+    req.onreadystatechange = function(){
+        if(req.readyState == 4) {
+            return req.status === 200 ? 
+                success(req.responseText) : error(req.status);
+        }
+    }
+    req.open("GET", url, true);
+    req.send(null);
+    return req;
 }
