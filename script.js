@@ -1,9 +1,10 @@
 var innerDoc;
 var state = 1;
-var time = 1;
+var time = 2;
 var signs;
-function firstCharOfContent(elt) { return elt.textContent[0]; };
-var update_datasheets = setInterval(function(){
+function firstCharOfContent(elt) { return elt.textContent[0]; };	//used in update_sheet. Returns the first character in a string
+//update_sheet: Moves the state 
+function update_sheet(){
 	if (state === 1){
 		document.getElementById("information").src = 'state_1.html';
 		document.getElementById("values_numbers").innerHTML = document.getElementById("state_1").innerHTML;
@@ -111,39 +112,26 @@ var update_datasheets = setInterval(function(){
 		document.getElementById("house").className = "zero";
 		document.getElementById("house_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[8]);
 	}	
-
-	
-
-	
-
-	
-
 	state=state+1;
 	if (state > 3){
 		state = 1;
 	}
-}, 1000);
+}
 
+update_sheet();
+//Updates the Clock image, and calls the update function every time it hits the first segment.
 var update_clock = setInterval(function(){
-	if (time == 0){
-		document.getElementById("timer").style.backgroundImage = "url(timer_1.png)";
-	}
-	else if (time == 1){
-		document.getElementById("timer").style.backgroundImage = "url(timer_2.png)";		
-	}
-	else if (time == 2){
-		document.getElementById("timer").style.backgroundImage = "url(timer_3.png)";		
-	}
-	else if (time == 3){
-		document.getElementById("timer").style.backgroundImage = "url(timer_4.png)";		
-	}
+	document.getElementById("timer").style.backgroundImage = "url(timer-" + time.toString() + ".png)";
+	if (time === 1){
+		update_sheet();
+	} 
 	time++;
-	if (time == 4){
-		time = 0;
+	if(time === 6){
+		time = 1; 
 	}
-},15000)
+},1000)
 
-
+//Takes a number in numerical form, and converts it into a text equivalent
 function convert(number){
 
 	switch (number){

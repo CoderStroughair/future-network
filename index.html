@@ -74,34 +74,33 @@
 				</div>
 			</div>
 		</div>
+		<!--Hidden divs that hold the usage data-->
 		<div id = "state_1" style="display: none;">
 			<ul class = "barcharts">
-				<li class = "wind_v">+100kW</li>
+				<li class = "wind_v">+10kW</li>
 				<li class = "battery_v">+20kW</li>
-				<li class = "wave_v">+20kW</li>
-				<li class = "station_v">+20kW</li>
-				<li class = "charge_v">+20kW</li>
-				<li class = "solar_v">+20kW</li>
-				<li class = "factory_v">+20kW</li>
-				<li class = "shops_v">+20kW</li>
-				<li class = "house_v">+20kW</li>
+				<li class = "wave_v">+30kW</li>
+				<li class = "station_v">-40kW</li>
+				<li class = "charge_v">+50kW</li>
+				<li class = "solar_v">-60kW</li>
+				<li class = "factory_v">+70kW</li>
+				<li class = "shops_v">+80kW</li>
+				<li class = "house_v">-90kW</li>
 			</ul>
-		</div>
-			
+		</div>			
 		<div id = "state_2" style="display: none;">
 			<ul class = "barcharts">
-				<li class = "wind_v">+20kW</li>
-				<li class = "battery_v">+20kW</li>
-				<li class = "wave_v">+20kW</li>
-				<li class = "station_v">+20kW</li>
-				<li class = "charge_v">+20kW</li>
-				<li class = "solar_v">+20kW</li>
+				<li class = "wind_v">-20kW</li>
+				<li class = "battery_v">-20kW</li>
+				<li class = "wave_v">-20kW</li>
+				<li class = "station_v">-20kW</li>
+				<li class = "charge_v">-20kW</li>
+				<li class = "solar_v">-20kW</li>
 				<li class = "factory_v">+20kW</li>
 				<li class = "shops_v">+20kW</li>
-				<li class = "house_v">+20kW</li>
+				<li class = "house_v">-20kW</li>
 			</ul>
-		</div>
-			
+		</div>		
 		<div id = "state_3" style="display: none;">
 			<ul class = "barcharts">
 				<li class = "wind_v">+60kW</li>
@@ -110,13 +109,13 @@
 				<li class = "station_v">+20kW</li>
 				<li class = "charge_v">+20kW</li>
 				<li class = "solar_v">+20kW</li>
-				<li class = "factory_v">+20kW</li>
+				<li class = "factory_v">+90kW</li>
 				<li class = "shops_v">+20kW</li>
-				<li class = "house_v">+20kW</li>
+				<li class = "house_v">-60kW</li>
 			</ul>
 		</div>
-			
-		
+		<!--Hidden iframe that holds the state value that is updated by the python code. Python takes care of timing to keep both in sync-->
+		<iframe id = "state_current" style="display: none;" src = "states.txt" Frameborder = "0"></iframe>
 		<script type = "text/javascript" src = "script.js"></script>
 	</body>
 </html>
