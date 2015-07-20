@@ -1,100 +1,123 @@
 var innerDoc;
 var state = 1;
 var time = 1;
+var signs;
+function firstCharOfContent(elt) { return elt.textContent[0]; };
 var update_datasheets = setInterval(function(){
 	if (state === 1){
 		document.getElementById("information").src = 'state_1.html';
-		document.getElementById("values_numbers").src = "variable_data_1.html";
-		//innerDoc = document.getElementById('values_numbers').contentWindow.document;
-		//document.getElementById("test").innerHTML = document.getElementById("values_numbers").contentWindow.document.innerHTML;
-		//document.getElementById("wind").className = document.getElementById('wind_n').innerHTML.match(/\d+/g)[0];
-		document.getElementById("wind_n").innerHTML = document.getElementById("values_numbers").contentWindow.document.getElementById("wind_v").innerHTML;
-		document.getElementById("wind_r").className = "nine_five";
-		
-		document.getElementById("battery").className = "two_five";
-		document.getElementById("battery_r").className = "eight_five";
-		
-		document.getElementById("wave").className = "three_five";
-		document.getElementById("wave_r").className = "seven_five";
-		
-		document.getElementById("station").className = "four_five";
-		document.getElementById("station_r").className = "six";
-		
-		document.getElementById("charge").className = "five";
-		document.getElementById("charge_r").className = "five";
-		
-		document.getElementById("solar").className = "six";
-		document.getElementById("solar_r").className = "four";
-		
-		document.getElementById("factory").className = "seven";
-		document.getElementById("factory_r").className = "three";
-		
-		document.getElementById("shops").className = "eight";
-		document.getElementById("shops_r").className = "two";
-		
-		document.getElementById("house").className = "nine";
-		document.getElementById("house_r").className = "one";
+		document.getElementById("values_numbers").innerHTML = document.getElementById("state_1").innerHTML;
 	}
 	else if (state === 2){
 		document.getElementById("information").src = 'state_2.html';
-		//document.getElementById("values_numbers").src = "variable_data_2.html";
-		document.getElementById("wind").className = "two";
-		document.getElementById("wind_r").className = "zero";
-		
-		document.getElementById("battery").className = "three";
-		document.getElementById("battery_r").className = "zero";
-		
-		document.getElementById("wave").className = "zero";
-		document.getElementById("wave_r").className = "zero";
-		
-		document.getElementById("station").className = "five";
-		document.getElementById("station_r").className = "zero";
-		
-		document.getElementById("charge").className = "two_five";
-		document.getElementById("charge_r").className = "zero";
-		
-		document.getElementById("solar").className = "six";
-		document.getElementById("solar_r").className = "zero";
-		
-		document.getElementById("factory").className = "four";
-		document.getElementById("factory_r").className = "zero";
-		
-		document.getElementById("shops").className = "zero";
-		document.getElementById("shops_r").className = "zero";
-		
-		document.getElementById("house").className = "nine";
-		document.getElementById("house_r").className = "zero";
+		document.getElementById("values_numbers").innerHTML = document.getElementById("state_2").innerHTML;
 	}
 	else if (state === 3){
 		document.getElementById("information").src = 'state_3.html';
-		//document.getElementById("values_numbers").src = "variable_data_3.html";
-		document.getElementById("wind").className = "two";
+		document.getElementById("values_numbers").innerHTML = document.getElementById("state_3").innerHTML;
+	}
+	
+	/* Will try to come back to the code below so that I'm not parsing HTML as much as I am, doesn't work this way though at the moment.*/
+	//var list = document.querySelectorAll('div.values_numbers ul li');
+	//signs = list.map(firstCharOfContent);
+	signs = document.getElementById('values_numbers').innerHTML.match(/[+-]/g);
+	if (signs[0] == "+")
+	{
+		document.getElementById("wind").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[0]);
 		document.getElementById("wind_r").className = "zero";
-		
-		document.getElementById("battery").className = "three";
+	}
+	else
+	{
+		document.getElementById("wind_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[0]);
+		document.getElementById("wind").className = "zero";
+	}
+	if (signs[1] == "+")
+	{
+		document.getElementById("battery").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[1]);
 		document.getElementById("battery_r").className = "zero";
-		
+	}
+	else
+	{
+		document.getElementById("battery").className = "zero";
+		document.getElementById("battery_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[1]);
+	}
+	if (signs[2] == "+")
+	{
+		document.getElementById("wave").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[2]);
+		document.getElementById("wave_r").className = "zero";	
+	}
+	else
+	{
 		document.getElementById("wave").className = "zero";
-		document.getElementById("wave_r").className = "zero";
-		
-		document.getElementById("station").className = "five";
-		document.getElementById("station_r").className = "zero";
-		
-		document.getElementById("charge").className = "two_five";
+		document.getElementById("wave_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[2]);		
+	}
+	if (signs[3] == "+")
+	{
+		document.getElementById("station").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[3]);
+		document.getElementById("station_r").className = "zero";;
+	}
+	else
+	{
+		document.getElementById("station").className = "zero";
+		document.getElementById("station_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[3]);
+	}
+	if (signs[4] == "+")
+	{
+		document.getElementById("charge").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[4]);
 		document.getElementById("charge_r").className = "zero";
-		
-		document.getElementById("solar").className = "six";
+	}
+	else
+	{
+		document.getElementById("charge").className = "zero";
+		document.getElementById("charge_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[4]);		
+	}
+	if (signs[5] == "+")
+	{
+		document.getElementById("solar").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[5]);
 		document.getElementById("solar_r").className = "zero";
-		
-		document.getElementById("house").className = "nine";
-		document.getElementById("house_r").className = "zero";
-		
-		document.getElementById("factory").className = "four";
+	}
+	else
+	{
+		document.getElementById("solar").className = "zero";
+		document.getElementById("solar_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[5]);		
+	}
+	if (signs[6] == "+")
+	{
+		document.getElementById("factory").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[6]);
 		document.getElementById("factory_r").className = "zero";
-		
-		document.getElementById("shops").className = "zero";
+	}
+	else
+	{
+		document.getElementById("factory").className = "zero";
+		document.getElementById("factory_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[6]);
+	}
+	if (signs[7] == "+")
+	{
+		document.getElementById("shops").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[7]);
 		document.getElementById("shops_r").className = "zero";
 	}
+	else
+	{
+		document.getElementById("shops").className = "zero";
+		document.getElementById("shops_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[7]);
+	}
+	if (signs[8] == "+")
+	{
+		document.getElementById("house").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[8]);
+		document.getElementById("house_r").className = "zero";
+	}
+	else
+	{
+		document.getElementById("house").className = "zero";
+		document.getElementById("house_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[8]);
+	}	
+
+	
+
+	
+
+	
+
 	state=state+1;
 	if (state > 3){
 		state = 1;
