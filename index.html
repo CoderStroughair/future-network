@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Future Networks Model</title>
+		<link href="style.css" rel = "stylesheet">
+	</head>
+	<body>	
+	<!--Full Page refers to a Div that takes up the full page-->
+		<div class = "full_page">
+			<!--Header holds only the Timer Div - mostly legacy code left over from original Layout-->
+			<div class = "header">			
+				<div id = "timer">
+				</div>					
+			</div>
+			<!--Payload is the second Div in full_page, holds the rest of the page inside it-->
+			<div class = "payload">
+				<!--box_left is the left box bordered by the size of the opaque background. Holds the barcharts and values for power usage-->
+				<div class = "box_left">
+					<h3> Statistics </h3>
+					<!--This div does very little other than a small amount of formatting for the boxes inside box_left-->
+					<div id = "variables">
+						<!--names holds the only static values on the page-->
+						<div id = "names"> 
+							<ul class = "barcharts">
+								<li>Wind Turbine</li>
+								<li>Battery</li>
+								<li>Wave Turbine</li>
+								<li>Power Stations</li>
+								<li>Charging Stations</li>
+								<li>Solar Panels</li>
+								<li>Factory</li>
+								<li>Shops</li>
+								<li>House</li>
+							</ul>					
+						</div>
+						<!--values_red holds the first barchart, the usage meters for the sources-->
+						<div id = "values_red">
+							<ul class = "barcharts_r">
+								<li><div id = "wind_r"></div></li>
+								<li><div id = "battery_r"></div></li>
+								<li><div id = "wave_r"></div></li>
+								<li><div id = "station_r"></div></li>
+								<li><div id = "charge_r"></div></li>
+								<li><div id = "solar_r"></div></li>
+								<li><div id = "factory_r"></div></li>
+								<li><div id = "shops_r"></div></li>
+								<li><div id = "house_r"></div></li>
+							</ul>
+						</div>	
+						<!--values_green holds the second barchart, the generation meters for the sources-->
+						<div id = "values_green">
+							<ul class = "barcharts">
+								<li><div id = "wind"></div></li>
+								<li><div id = "battery"></div></li>
+								<li><div id = "wave"></div></li>
+								<li><div id = "station"></div></li>
+								<li><div id = "charge"></div></li>
+								<li><div id = "solar"></div></li>
+								<li><div id = "factory"></div></li>
+								<li><div id = "shops"></div></li>
+								<li><div id = "house"></div></li>
+							</ul>
+						</div>
+						<!--External data that gives the usage and generation information in English-->
+						<div id = "values_variable">
+						</div>
+					</div>
+				</div>
+				<!--box_right holds the second box, just has an <iframe> inside it-->
+				<div class = "box_right">
+					<h3> State Info </h3>
+					<!--External data that gives information regarding the current state of the model-->
+					<iframe id = "information" src= "state_1.html" Frameborder = "0"></iframe>
+				</div>
+			</div>
+		</div>
+		<div id = "state_1" style="display: none;">
+			<ul class = "barcharts">
+				<li id = "wind_v">+20kW</li>
+				<li id = "battery_v">+20kW</li>
+				<li id = "wave_v">+20kW</li>
+				<li id = "station_v">+20kW</li>
+				<li id = "charge_v">+20kW</li>
+				<li id = "solar_v">+20kW</li>
+				<li id = "factory_v">+20kW</li>
+				<li id = "shops_v">+20kW</li>
+				<li id = "house_v">+20kW</li>
+			</ul>
+		</div>
+			
+		<div id = "state_2" style="display: none;">
+			<ul class = "barcharts">
+				<li id = "wind_v">+20kW</li>
+				<li id = "battery_v">+20kW</li>
+				<li id = "wave_v">+20kW</li>
+				<li id = "station_v">+20kW</li>
+				<li id = "charge_v">+20kW</li>
+				<li id = "solar_v">+20kW</li>
+				<li id = "factory_v">+20kW</li>
+				<li id = "shops_v">+20kW</li>
+				<li id = "house_v">+20kW</li>
+			</ul>
+		</div>
+			
+		<div id = "state_3" style="display: none;">
+			<ul class = "barcharts">
+				<li id = "wind_v">+60kW</li>
+				<li id = "battery_v">+30kW</li>
+				<li id = "wave_v">+20kW</li>
+				<li id = "station_v">+20kW</li>
+				<li id = "charge_v">+20kW</li>
+				<li id = "solar_v">+20kW</li>
+				<li id = "factory_v">+20kW</li>
+				<li id = "shops_v">+20kW</li>
+				<li id = "house_v">+20kW</li>
+			</ul>
+		</div>
+			
+		
+		<script type = "text/javascript" src = "script.js"></script>
+	</body>
+</html>
+

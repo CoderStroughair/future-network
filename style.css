@@ -1,0 +1,234 @@
+html, body {
+	color: white;
+}
+h3{
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+/***Information For the Full Page***/
+
+.full_page{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-position: center;
+	background-size: cover;
+	background-image: url('windmill-background-wave.jpg')
+}
+.full_page .header {
+	margin-top: 2%;
+	height: 17%;
+}
+.full_page .header #timer {
+	position:relative;
+	width: 10%;
+	height: 110%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	background-position: center;
+	background-size: 100% 100%;
+	background-image: url('timer_1.png');
+}
+.full_page .payload{
+	position: relative;
+	clear:both;
+	height: 80%;
+}
+
+/*End of Full Page*/
+
+/***Styling Information for the Shaded Area on the Right Side***/
+
+.full_page .payload .box_right{
+	position: relative;
+	margin-right: 3%;
+	float: right;
+	width: 40%;
+	text-align: center;
+	background-image: url('transparency.png');
+	height: 80%;
+}
+.box_right #information{
+	position: relative;
+	height: 100%;
+	width: 90%;
+}
+
+/*End of Right Side*/
+
+/***Styling Information for the Shaded Area on the Left Side***/
+
+.full_page .payload .box_left{
+	position: relative;
+	margin-left: 3%;
+	float: left;
+	width: 40%;
+	text-align: center;
+	background-image: url('transparency.png');
+	height: 80%;
+}
+.box_left #variables {
+	display: inline-block;
+	position: relative;
+	height: 85%;
+	width: 95%
+}
+.box_left #variables #names {
+	position: relative;
+	height: 100%;
+	float: left;
+	width: 25%;
+	text-align: left;
+	overflow: visible;
+}
+.box_left #variables #values_red{
+	position: relative;
+	float: left;
+	width: 30%;
+	text-align:right;
+	height: 100%;
+	overflow: visible;
+	border-right: 1px solid black;
+}
+.box_left #variables #values_green{
+	position: relative;
+	float: left;
+	width: 30%;
+	text-align: left;
+	height: 100%;
+	overflow: visible;
+	border-left: 1px solid black;
+}
+.box_left #variables #values_numbers{
+	position: relative;
+	float: right;
+	width: 13%;
+	height: 100%;
+	text-align:left;
+	overflow: visible;
+}
+ul.barcharts {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	line-height: 2.45em;
+	list-style-type: none; 
+	padding: 0;
+}
+ul.barcharts li {
+	position: relative;
+	margin: .35em 0;
+	padding: 0;
+}
+ul.barcharts_r {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	line-height: 2.45em;
+	list-style-type: none; 
+	padding: 0;
+}
+ul.barcharts_r li {
+	position: relative;
+	margin: .35em 0;
+	padding: 0;
+}
+
+/**Information Specific to the Green and Red Bar Charts**/
+
+#values_green li div{
+	position: relative;
+	height: 1.9em;
+	float: left;
+	clear: both;
+	width: 100%;
+	margin: .45em 0;
+	background-image: url("bar_green.png");
+	background-size: 100% 100%;
+}
+#values_red li div{
+	position: relative;
+	right: 0;
+	height: 1.9em;
+	float: right;
+	clear: both;
+	width: 100%;
+	margin: .45em 0;
+	background-image: url("bar_red.png");
+	background-size: 100% 100%;
+}
+#values_red li div.zero, #values_green li div.zero {
+	width:0%;
+}
+#values_red li div.zero_five, #values_green li div.zero_five {
+	width:5%;
+}
+#values_red li div.one,#values_green li div.one {
+	width: 10%;
+}
+#values_red li div.one_five,#values_green li div.one_five {
+	width: 15%;
+}
+#values_red li div.two,#values_green li div.two {
+	width: 20%;
+}
+#values_red li div.two_five,#values_green li div.two_five {
+	width: 25%;
+}
+#values_red li div.three,#values_green li div.three {
+	width: 30%;
+}
+#values_red li div.three_five,#values_green li div.three_five {
+	width: 35%;
+}
+#values_red li div.four,#values_green li div.four {
+	width: 40%;
+}
+#values_red li div.four_five,#values_green li div.four_five {
+	width: 45%;
+}
+#values_red li div.five,#values_green li div.five {
+	width: 50%;
+}
+#values_red li div.five_five,#values_green li div.five_five {
+	width: 55%;
+}
+#values_red li div.six,#values_green li div.six {
+	width: 60%;
+}
+#values_red li div.six_five,#values_green li div.six_five {
+	width: 65%;
+}
+#values_red li div.seven,#values_green li div.seven {
+	width: 70%;
+}
+#values_red li div.seven_five,#values_green li div.seven_five {
+	width: 75%;
+}
+#values_red li div.eight,#values_green li div.eight {
+	width: 80%;
+}
+#values_red li div.eight_five,#values_green li div.eight_five {
+	width: 85%;
+}
+#values_red li div.nine,#values_green li div.nine {
+	width: 95%;
+}
+#values_red li div.nine_five,#values_green li div.nine_five {
+	width: 90%;
+}
+#values_red li div.ten,#values_green li div.ten {
+	width: 100%;
+}
+
+/*End of Left Side */
+
+
+
+
+
+
