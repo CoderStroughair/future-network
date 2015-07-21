@@ -6,8 +6,8 @@ h3{
 	font-weight: bold;
 }
 
-/***Information For the Full Page***/
 
+/***Information For the Full Page***/
 .full_page{
 	position: absolute;
 	top: 0;
@@ -38,11 +38,10 @@ h3{
 	clear:both;
 	height: 80%;
 }
-
 /*End of Full Page*/
 
-/***Styling Information for the Shaded Area on the Right Side***/
 
+/***Styling Information for the Shaded Area on the Right Side***/
 .full_page .payload .box_right{
 	position: relative;
 	margin-right: 3%;
@@ -56,12 +55,15 @@ h3{
 	position: relative;
 	height: 100%;
 	width: 90%;
+	overflow: visible;
 }
-
+.information {
+	font-size: 1.25em;
+}
 /*End of Right Side*/
 
-/***Styling Information for the Shaded Area on the Left Side***/
 
+/***Styling Information for the Shaded Area on the Left Side***/
 .full_page .payload .box_left{
 	position: relative;
 	margin-left: 3%;
@@ -139,7 +141,6 @@ ul.barcharts_r li {
 }
 
 /**Information Specific to the Green and Red Bar Charts**/
-
 #values_green li div{
 	position: relative;
 	height: 1.9em;
@@ -224,7 +225,6 @@ ul.barcharts_r li {
 #values_red li div.ten,#values_green li div.ten {
 	width: 100%;
 }
-
 /*End of Left Side */
 
 

@@ -24,93 +24,93 @@ function update_sheet(){
 	signs = document.getElementById('values_numbers').innerHTML.match(/[+-]/g);
 	if (signs[0] == "+")
 	{
-		document.getElementById("wind").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[0]);
+		document.getElementById("wind").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[0]);
 		document.getElementById("wind_r").className = "zero";
 	}
 	else
 	{
-		document.getElementById("wind_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[0]);
+		document.getElementById("wind_r").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[0]);
 		document.getElementById("wind").className = "zero";
 	}
 	if (signs[1] == "+")
 	{
-		document.getElementById("battery").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[1]);
+		document.getElementById("battery").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[1]);
 		document.getElementById("battery_r").className = "zero";
 	}
 	else
 	{
 		document.getElementById("battery").className = "zero";
-		document.getElementById("battery_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[1]);
+		document.getElementById("battery_r").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[1]);
 	}
 	if (signs[2] == "+")
 	{
-		document.getElementById("wave").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[2]);
+		document.getElementById("wave").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[2]);
 		document.getElementById("wave_r").className = "zero";	
 	}
 	else
 	{
 		document.getElementById("wave").className = "zero";
-		document.getElementById("wave_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[2]);		
+		document.getElementById("wave_r").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[2]);		
 	}
 	if (signs[3] == "+")
 	{
-		document.getElementById("station").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[3]);
-		document.getElementById("station_r").className = "zero";;
+		document.getElementById("station").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[3]);
+		document.getElementById("station_r").className = "zero";
 	}
 	else
 	{
 		document.getElementById("station").className = "zero";
-		document.getElementById("station_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[3]);
+		document.getElementById("station_r").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[3]);
 	}
 	if (signs[4] == "+")
 	{
-		document.getElementById("charge").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[4]);
+		document.getElementById("charge").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[4]);
 		document.getElementById("charge_r").className = "zero";
 	}
 	else
 	{
 		document.getElementById("charge").className = "zero";
-		document.getElementById("charge_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[4]);		
+		document.getElementById("charge_r").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[4]);		
 	}
 	if (signs[5] == "+")
 	{
-		document.getElementById("solar").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[5]);
+		document.getElementById("solar").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[5]);
 		document.getElementById("solar_r").className = "zero";
 	}
 	else
 	{
 		document.getElementById("solar").className = "zero";
-		document.getElementById("solar_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[5]);		
+		document.getElementById("solar_r").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[5]);		
 	}
 	if (signs[6] == "+")
 	{
-		document.getElementById("factory").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[6]);
+		document.getElementById("factory").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[6]);
 		document.getElementById("factory_r").className = "zero";
 	}
 	else
 	{
 		document.getElementById("factory").className = "zero";
-		document.getElementById("factory_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[6]);
+		document.getElementById("factory_r").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[6]);
 	}
 	if (signs[7] == "+")
 	{
-		document.getElementById("shops").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[7]);
+		document.getElementById("shops").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[7]);
 		document.getElementById("shops_r").className = "zero";
 	}
 	else
 	{
 		document.getElementById("shops").className = "zero";
-		document.getElementById("shops_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[7]);
+		document.getElementById("shops_r").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[7]);
 	}
 	if (signs[8] == "+")
 	{
-		document.getElementById("house").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[8]);
+		document.getElementById("house").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[8]);
 		document.getElementById("house_r").className = "zero";
 	}
 	else
 	{
 		document.getElementById("house").className = "zero";
-		document.getElementById("house_r").className = convert(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[8]);
+		document.getElementById("house_r").className = convertdouble(document.getElementById('values_numbers').innerHTML.match(/\d+/g)[8]);
 	}	
 	state=state+1;
 	if (state > 3){
@@ -196,6 +196,47 @@ function convert(number){
 			return "nine_five";
 			break;
 		case ("100"):
+			return "ten";
+			break;	
+		default:
+			return "five";
+			break;
+	}	
+}
+function convertdouble(number){
+
+	switch (number){
+		case("0"):
+			return "zero";
+			break;
+		case ("5"):
+			return "one";
+			break;
+		case ("10"):
+			return "two";
+			break;
+		case ("15"):
+			return "three";
+			break;
+		case ("20"):
+			return "four";
+			break;
+		case ("25"):
+			return "five";
+			break;
+		case ("30"):
+			return "six";
+			break;
+		case ("35"):
+			return "seven";
+			break;
+		case ("40"):
+			return "eight";
+			break;
+		case ("45"):
+			return "nine";
+			break;
+		case ("50"):
 			return "ten";
 			break;	
 		default:
