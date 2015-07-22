@@ -74,155 +74,130 @@ h3{
 	height: 80%;
 }
 .box_left #variables {
-	display: inline-block;
 	position: relative;
 	height: 85%;
-	width: 95%
+	width: 95%;
+	margin-left:2.5%;
 }
 .box_left #variables #names {
-	position: relative;
-	height: 100%;
-	float: left;
+	position: absolute;
+	left: 0;
+	top: 0;
 	width: 25%;
-	text-align: left;
+	height: 100%;
 	overflow: visible;
 }
 .box_left #variables #values_red{
-	position: relative;
-	float: left;
+	position: absolute;
+	top: 0;
+	left: 25%;
 	width: 30%;
-	text-align:right;
 	height: 100%;
 	overflow: visible;
 	border-right: 1px solid black;
 }
 .box_left #variables #values_green{
-	position: relative;
-	float: left;
+	position: absolute;
+	top: 0;
+	left: 55%;
 	width: 30%;
-	text-align: left;
 	height: 100%;
 	overflow: visible;
 	border-left: 1px solid black;
 }
 .box_left #variables #values_numbers{
-	position: relative;
-	float: right;
+	position: absolute;
+	top: 0;
+	right: 0;
 	width: 13%;
 	height: 100%;
 	text-align:left;
 	overflow: visible;
 }
-ul.barcharts {
-	position: relative;
-	display: inline-block;
-	width: 100%;
-	line-height: 2.45em;
-	list-style-type: none; 
-	padding: 0;
+.barcharts {
 }
-ul.barcharts li {
-	position: relative;
-	margin: .35em 0;
-	padding: 0;
-}
-ul.barcharts_r {
-	position: relative;
-	display: inline-block;
-	width: 100%;
-	line-height: 2.45em;
-	list-style-type: none; 
-	padding: 0;
-}
-ul.barcharts_r li {
-	position: relative;
-	margin: .35em 0;
-	padding: 0;
+.barcharts_r {
 }
 
+.barcharts div, .barcharts_r div{
+	height: 1.5em;
+	margin-top: 0.8em;
+	
+}
 /**Information Specific to the Green and Red Bar Charts**/
-#values_green li div{
-	position: relative;
-	height: 1.9em;
-	float: left;
-	clear: both;
-	width: 100%;
-	margin: .45em 0;
+#values_green div{
+	width: 50%;
 	background-image: url("bar_green.png");
 	background-size: 100% 100%;
 }
-#values_red li div{
-	position: relative;
-	right: 0;
-	height: 1.9em;
+#values_red div{
 	float: right;
 	clear: both;
-	width: 100%;
-	margin: .45em 0;
+	width: 50%;
 	background-image: url("bar_red.png");
 	background-size: 100% 100%;
 }
-#values_red li div.zero, #values_green li div.zero {
+#values_red div.zero, #values_green div.zero {
 	width:0%;
 }
-#values_red li div.zero_five, #values_green li div.zero_five {
+#values_red div.zero_five, #values_green div.zero_five {
 	width:5%;
 }
-#values_red li div.one,#values_green li div.one {
+#values_red div.one,#values_green div.one {
 	width: 10%;
 }
-#values_red li div.one_five,#values_green li div.one_five {
+#values_red li div.one_five,#values_green  div.one_five {
 	width: 15%;
 }
-#values_red li div.two,#values_green li div.two {
+#values_red  div.two,#values_green  div.two {
 	width: 20%;
 }
-#values_red li div.two_five,#values_green li div.two_five {
+#values_red  div.two_five,#values_green  div.two_five {
 	width: 25%;
 }
-#values_red li div.three,#values_green li div.three {
+#values_red  div.three,#values_green  div.three {
 	width: 30%;
 }
-#values_red li div.three_five,#values_green li div.three_five {
+#values_red  div.three_five,#values_green  div.three_five {
 	width: 35%;
 }
-#values_red li div.four,#values_green li div.four {
+#values_red  div.four,#values_green  div.four {
 	width: 40%;
 }
-#values_red li div.four_five,#values_green li div.four_five {
+#values_red  div.four_five,#values_green  div.four_five {
 	width: 45%;
 }
-#values_red li div.five,#values_green li div.five {
+#values_red  div.five,#values_green  div.five {
 	width: 50%;
 }
-#values_red li div.five_five,#values_green li div.five_five {
+#values_red  div.five_five,#values_green  div.five_five {
 	width: 55%;
 }
-#values_red li div.six,#values_green li div.six {
+#values_red  div.six,#values_green  div.six {
 	width: 60%;
 }
-#values_red li div.six_five,#values_green li div.six_five {
+#values_red  div.six_five,#values_green  div.six_five {
 	width: 65%;
 }
-#values_red li div.seven,#values_green li div.seven {
+#values_red  div.seven,#values_green  div.seven {
 	width: 70%;
 }
-#values_red li div.seven_five,#values_green li div.seven_five {
+#values_red  div.seven_five,#values_green  div.seven_five {
 	width: 75%;
 }
-#values_red li div.eight,#values_green li div.eight {
+#values_red  div.eight,#values_green  div.eight {
 	width: 80%;
 }
-#values_red li div.eight_five,#values_green li div.eight_five {
+#values_red  div.eight_five,#values_green  div.eight_five {
 	width: 85%;
 }
-#values_red li div.nine,#values_green li div.nine {
+#values_red  div.nine,#values_green  div.nine {
 	width: 95%;
 }
-#values_red li div.nine_five,#values_green li div.nine_five {
+#values_red  div.nine_five,#values_green  div.nine_five {
 	width: 90%;
 }
-#values_red li div.ten,#values_green li div.ten {
+#values_red  div.ten,#values_green  div.ten {
 	width: 100%;
 }
 /*End of Left Side */

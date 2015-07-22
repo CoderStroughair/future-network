@@ -20,49 +20,43 @@
 					<!--This div does very little other than a small amount of formatting for the boxes inside box_left-->
 					<div id = "variables">
 						<!--names holds the only static values on the page-->
-						<div id = "names"> 
-							<ul class = "barcharts">
-								<li>Wind Turbine</li>
-								<li>Battery</li>
-								<li>Wave Turbine</li>
-								<li>Power Stations</li>
-								<li>Charging Stations</li>
-								<li>Solar Panels</li>
-								<li>Factory</li>
-								<li>Shops</li>
-								<li>House</li>
-							</ul>					
+						<div id = "names" class = "barcharts"> 
+								<div>Wind Turbine</div>
+								<div>Battery</div>
+								<div>Wave Turbine</div>
+								<div>Power Stations</div>
+								<div>Charging Stations</div>
+								<div>Solar Panels</div>
+								<div>Factory</div>
+								<div>Shops</div>
+								<div>House</div>				
 						</div>
 						<!--values_red holds the first barchart, the usage meters for the sources-->
-						<div id = "values_red">
-							<ul class = "barcharts_r">
-								<li><div id = "wind_r"></div></li>
-								<li><div id = "battery_r"></div></li>
-								<li><div id = "wave_r"></div></li>
-								<li><div id = "station_r"></div></li>
-								<li><div id = "charge_r"></div></li>
-								<li><div id = "solar_r"></div></li>
-								<li><div id = "factory_r"></div></li>
-								<li><div id = "shops_r"></div></li>
-								<li><div id = "house_r"></div></li>
-							</ul>
+						<div id = "values_red" class = "barcharts_r">
+								<div id = "wind_r"></div>
+								<div id = "battery_r"></div>
+								<div id = "wave_r"></div>
+								<div id = "station_r"></div>
+								<div id = "charge_r"></div>
+								<div id = "solar_r"></div>
+								<div id = "factory_r"></div>
+								<div id = "shops_r"></div>
+								<div id = "house_r"></div>
 						</div>	
 						<!--values_green holds the second barchart, the generation meters for the sources-->
-						<div id = "values_green">
-							<ul class = "barcharts">
-								<li><div id = "wind"></div></li>
-								<li><div id = "battery"></div></li>
-								<li><div id = "wave"></div></li>
-								<li><div id = "station"></div></li>
-								<li><div id = "charge"></div></li>
-								<li><div id = "solar"></div></li>
-								<li><div id = "factory"></div></li>
-								<li><div id = "shops"></div></li>
-								<li><div id = "house"></div></li>
-							</ul>
+						<div id = "values_green" class = "barcharts">
+								<div id = "wind"></div>
+								<div id = "battery"></div>
+								<div id = "wave"></div>
+								<div id = "station"></div>
+								<div id = "charge"></div>
+								<div id = "solar"></div>
+								<div id = "factory"></div>
+								<div id = "shops"></div>
+								<div id = "house"></div>
 						</div>
 						<!--External data that gives the usage and generation information in English-->
-						<div id = "values_numbers">
+						<div id = "values_numbers" class = "barcharts">
 						</div>
 					</div>
 				</div>
@@ -76,43 +70,37 @@
 		</div>
 		<!--Hidden divs that hold the usage data-->
 		<div id = "state_1" style="display: none;">
-			<ul class = "barcharts">
-				<li class = "wind_v">+50kW</li>
-				<li class = "battery_v">-30kW</li>
-				<li class = "wave_v">+40kW</li>
-				<li class = "station_v">0kW</li>
-				<li class = "charge_v">-20kW</li>
-				<li class = "solar_v">+30kW</li>
-				<li class = "factory_v">-30kW</li>
-				<li class = "shops_v">-30kW</li>
-				<li class = "house_v">-10kW</li>
-			</ul>
+			<div class = "wind_v">+50kW</div>
+			<div class = "battery_v">-30kW</div>
+			<div class = "wave_v">+40kW</div>
+			<div class = "station_v">0kW</div>
+			<div class = "charge_v">-20kW</div>
+			<div class = "solar_v">+30kW</div>
+			<div class = "factory_v">-30kW</div>
+			<div class = "shops_v">-30kW</div>
+			<div class = "house_v">-10kW</div>
 		</div>			
 		<div id = "state_2" style="display: none;">
-			<ul class = "barcharts">
-				<li class = "wind_v">+10kW</li>
-				<li class = "battery_v">+0kW</li>
-				<li class = "wave_v">+20kW</li>
-				<li class = "station_v">+10kW</li>
-				<li class = "charge_v">+0kW</li>
-				<li class = "solar_v">+30kW</li>
-				<li class = "factory_v">-30kW</li>
-				<li class = "shops_v">-30kW</li>
-				<li class = "house_v">-10kW</li>
-			</ul>
+			<div class = "wind_v">+10kW</div>
+			<div class = "battery_v">+0kW</div>
+			<div class = "wave_v">+20kW</div>
+			<div class = "station_v">+10kW</div>
+			<div class = "charge_v">+0kW</div>
+			<div class = "solar_v">+30kW</div>
+			<div class = "factory_v">-30kW</div>
+			<div class = "shops_v">-30kW</div>
+			<div class = "house_v">-10kW</div>
 		</div>		
 		<div id = "state_3" style="display: none;">
-			<ul class = "barcharts">
-				<li class = "wind_v">+10kW</li>
-				<li class = "battery_v">+5kW</li>
-				<li class = "wave_v">+20kW</li>
-				<li class = "station_v">+0kW</li>
-				<li class = "charge_v">+0kW</li>
-				<li class = "solar_v">+30kW</li>
-				<li class = "factory_v">-15kW</li>
-				<li class = "shops_v">-15kW</li>
-				<li class = "house_v">-5kW</li>
-			</ul>
+			<div class = "wind_v">+10kW</div>
+			<div class = "battery_v">+5kW</div>
+			<div class = "wave_v">+20kW</div>
+			<div class = "station_v">+0kW</div>
+			<div class = "charge_v">+0kW</div>
+			<div class = "solar_v">+30kW</div>
+			<div class = "factory_v">-15kW</div>
+			<div class = "shops_v">-15kW</div>
+			<div class = "house_v">-5kW</div>
 		</div>
 		<!--Hidden iframe that holds the state value that is updated by the python code. Python takes care of timing to keep both in sync-->
 		<iframe id = "state_current" style="display: none;" src = "states.txt" Frameborder = "0"></iframe>
