@@ -11,14 +11,6 @@ windmill_1 = 1
 lights_primary = 2
 lights_secondary = 3
 power_stations = 4
-
-def mode_change(signum,frame):
-        mode = mode+1
-        #### Currently no Requirement for Blackout Mode ####
-        if mode > 2:
-                mode = 0
-        powermode(mode)
-        signal.alarm(30)
         
 def powermode(mode):
         #### Full Power Mode - All Lights on ####
@@ -53,10 +45,8 @@ def powermode(mode):
 #### Initialise the Lights to Full Power Mode ####
 powermode(0)
 mode=0
-signal.signal(signal.SIGALRM,mode_change)
-signal.alarm(30)
 while true:
-		obj	= [{"mode": mode}]
-		data = json.dump(obj)
-        with open("state.txt",w) as f:
+        with open("state.txt") as f:
                 f.writeline(data)
+				mode = int(f.read())
+		powermode(mode)
