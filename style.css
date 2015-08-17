@@ -1,7 +1,7 @@
 html, body {
 	color: white;
 }
-h3{
+h3, .state_button{
 	text-transform: uppercase;
 	font-weight: bold;
 }
@@ -24,7 +24,7 @@ h3{
 }
 .full_page .header #timer {
 	position:relative;
-	width: 15%;
+	width: 18%;
 	height: 50%;
 	text-align: center;
 	margin-left: auto;
@@ -50,6 +50,16 @@ h3{
 	text-align: center;
 	background-image: url('transparency.png');
 	height: 80%;
+}
+
+.box_right .state_button{
+	position: relative;
+	height: 20%;
+	width: 60%;
+	margin-bottom: 10%;
+	background-position: center;
+	background-size: 100% 100%;
+	background-color: #87CEEB;
 }
 .box_right #information{
 	position: relative;

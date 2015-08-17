@@ -5,17 +5,21 @@ var time = 2;
 var signs;
 
 //update_sheet: Moves the state 
+function changeState(input){
+	state = input;
+	update_sheet();
+}
 function update_sheet(){
 	if (state === "0"){
-		document.getElementById("information").src = 'state_1.html';
+		//document.getElementById("information").src = 'state_1.html';
 		document.getElementById("values_numbers").innerHTML = document.getElementById("state_1").innerHTML;
 	}
 	else if (state === "1"){
-		document.getElementById("information").src = 'state_2.html';
+		//document.getElementById("information").src = 'state_2.html';
 		document.getElementById("values_numbers").innerHTML = document.getElementById("state_2").innerHTML;
 	}
 	else if (state === "2"){
-		document.getElementById("information").src = 'state_3.html';
+		//document.getElementById("information").src = 'state_3.html';
 		document.getElementById("values_numbers").innerHTML = document.getElementById("state_3").innerHTML;
 	}
 	
@@ -122,20 +126,13 @@ function update_sheet(){
 update_sheet();
 //Updates the Clock image, and calls the update function every time it hits the first segment.
 var update_clock = setInterval(function(){
-	document.getElementById("state_current").contentWindow.location.reload(true);
-	innerDoc = document.getElementById("state_current").contentWindow.document.body.innerHTML.toString();
-	if (state != innerDoc){
-		state = innerDoc;
-		update_sheet();
-//	document.getElementById("timer").style.backgroundImage = "url(timer-" + time.toString() + ".png)";
-//	if (time === 1){
-//		update_sheet();
-//	} 
-//	time++;
-//	if(time === 6){
-//		time = 1; 
-	}
-},1000)
+	//document.getElementById("state_current").contentWindow.location.reload(true);
+	document.getElementById("state_current").contentWindow.document.body.innerHTML = state;
+	//if (state != innerDoc){
+	//	state = innerDoc;
+	//	update_sheet();
+	//}
+},500)
 //Takes a number in numerical form, and converts it into a text equivalent
 function convert(number){
 
